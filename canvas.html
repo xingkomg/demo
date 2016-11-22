@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>yuan</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+
+	<body>
+		<canvas id="canvas"></canvas>
+		<canvas id="canvas1"></canvas>
+		<canvas id="canvas2" width="" height="200"></canvas>
+		<script type="text/javascript">
+			var start = 2;
+			var endNum = 0;
+			var drawEnd = 0;
+			var circle = 42;
+			var circleWidth = 6;
+			var firstNum = 1;
+			var x = circle + circleWidth * 2,
+				y = circle + circleWidth * 2;
+			drawStart(80, 50, 4);
+
+			function drawStart(end, circle1, circleWidth1, x1, y1) {
+				firstNum = 1;
+				endNum = end * 0.02;
+				drawEnd = end;
+				if(circle1 != null) {
+					circle = circle1;
+				}
+				if(circleWidth1 != null) {
+					circleWidth = circleWidth1;
+				}
+				if(x1 != null) {
+					x = x1 + circleWidth * 2;
+				}
+				if(y1 != null) {
+					y = y1 + circleWidth * 2;
+				}
+				draw();
+			}
+
+			function draw() {
+				var canvas = document.getElementById("canvas");
+				var cxt = canvas.getContext("2d");
+				if(firstNum == 1) {
+					cxt.beginPath();
+					cxt.arc(x, y, circle, 0, Math.PI * 2, true);
+					cxt.lineWidth = circleWidth;
+					cxt.strokeStyle = "#EEE";
+					cxt.stroke(); //画空心圆
+					
+					cxt.closePath();
+					cxt.beginPath();
+					cxt.fillStyle = "#fff";
+					cxt.arc(x, y, circle - circleWidth / 2, 0, Math.PI * 2, true);
+					cxt.fill(); //画实心圆
+					cxt.closePath();
+				}
+				cxt.beginPath();
+				cxt.arc(x, y, circle, start * Math.PI, Math.PI * 2, true);
+				cxt.lineWidth = circleWidth;
+				cxt.strokeStyle = "aqua";
+				cxt.stroke(); //画空心圆
+				cxt.closePath();
+				if(start == 2 && endNum != 0) {
+					start = 0;
+				}
+				if(start < endNum && endNum != 0 && (start >= 0.1 || start == 0)) {
+					setTimeout(function() {
+						start = start + 0.1;
+						draw();
+					}, 100);
+				} else {
+					drawend();
+					cxt.textAlign = "center";
+					cxt.fillStyle = "red";
+					cxt.font = "15px Arial";
+					cxt.fillText(drawEnd + "%", x, y);
+				}
+
+			}
+
+			function drawend() {
+				if(endNum == 0) {
+					endNum = 2;
+				}
+				var canvas = document.getElementById("canvas");
+				var cxt = canvas.getContext("2d");
+				cxt.beginPath();
+				cxt.arc(x, y, circle, endNum * Math.PI, Math.PI * 2, true);
+				cxt.lineWidth = circleWidth;
+				cxt.strokeStyle = "aqua";
+				cxt.stroke(); //画空心圆
+				cxt.closePath();
+			}
+		</script>
+		
+		
+		<script type="text/javascript">
+			var canvas1 = document.getElementById("canvas1");
+			console.log(canvas1.clientWidth);
+			console.log(canvas1.clientHeight);
+			var ctx1 = canvas1.getContext("2d");
+			ctx1.beginPath();
+			ctx1.strokeStyle = "aqua";
+			ctx1.lineWidth = 3;
+			ctx1.arc(6, 59, 3, 0, Math.PI * 2);
+			ctx1.stroke(); //画空心圆
+			ctx1.closePath();
+
+			ctx1.beginPath();
+			ctx1.moveTo(10, 60);
+			ctx1.lineTo(50, 70);
+			ctx1.strokeStyle = "blue";
+			ctx1.lineWidth = 3;
+			ctx1.shadowColor = "#777";
+			ctx1.lineJoin = "round";
+			ctx1.stroke();
+			ctx1.closePath();
+
+			ctx1.beginPath();
+			ctx1.strokeStyle = "aqua";
+			ctx1.lineWidth = 3;
+			ctx1.arc(54, 71, 3, 0, Math.PI * 2);
+			ctx1.stroke(); //画空心圆
+			ctx1.closePath();
+
+			ctx1.beginPath();
+			ctx1.moveTo(58, 69);
+			ctx1.lineTo(98, 30);
+			//			ctx1.strokeStyle="blue";
+			var grd = ctx1.createLinearGradient(0, 0, 0, 98);
+			grd.addColorStop(0, "#FF0000");
+			grd.addColorStop(1, "#00FF00");
+			ctx1.strokeStyle = grd;
+			ctx1.shadowBlur = 10;
+			ctx1.lineJoin = "round";
+			ctx1.shadowColor = "#777";
+			ctx1.lineWidth = 3;
+			ctx1.stroke();
+			ctx1.closePath();
+
+			ctx1.beginPath();
+			ctx1.strokeStyle = "aqua";
+			ctx1.lineWidth = 3;
+			ctx1.arc(102, 28, 3, 0, Math.PI * 2);
+			ctx1.stroke(); //画空心圆
+			ctx1.closePath();
+
+		</script>
+		
+		<script type="text/javascript">
+			var canvas2 = document.getElementById("canvas2");
+			var ctx2 = canvas2.getContext("2d");
+			var width2 = 20,height = canvas2.clientHeight; 
+			var oblongpre = 30;
+			canvas2.clientHeight;
+			oblong();
+			function oblong(){
+				ctx2.beginPath();
+				ctx2.fillStyle = "#FF0000";
+				ctx2.fillRect(0, height-(height*oblongpre/100), width2, height*oblongpre/100);
+				ctx2.closePath();
+				ctx2.beginPath();
+				ctx2.textAlign = "top";
+				ctx2.fillStyle = "red";
+				ctx2.font = "15px Arial";
+				ctx2.fillText(oblongpre + "%", 0, height-(height*oblongpre/100)-10);
+				ctx2.closePath();
+			}
+		</script>
+	</body>
+
+</html>
