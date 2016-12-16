@@ -1,11 +1,11 @@
 <div id="user-register">
 	{ if company == 1 }
 	<div class="baiwang">
-		<img src="/assets/img/user/register/baiwang.png" />
+		<img src="./assets/img/user/register/baiwang.png" />
 	</div>
 	{ else }
 	<div class="own">
-		<img src="/assets/img/user/register/logo-2.png" />
+		<img src="./assets/img/user/register/logo-2.png" />
 	</div>
 	{ /if }
 	<div class="form">

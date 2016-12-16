@@ -1,9 +1,9 @@
 .navbg(@img1,@img2){
-	background: url('@{img1}') center 7px no-repeat;
+	background: data-uri('@{img1}') center 7px no-repeat;
 	background-size: 24px auto;
 
 	&.active{
-		background: url('@{img2}') center 7px no-repeat;
+		background: data-uri('@{img2}') center 7px no-repeat;
 		background-size: 24px auto;
 		color: #c29c4a;
 	}
