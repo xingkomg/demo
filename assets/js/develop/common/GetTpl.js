@@ -16,7 +16,13 @@ class GetTpl{
 			obj.callback(CacheHtml);
 			return false;
 		}
-		$.get('/views' + obj.url,function(res){
+		var nowurl = window.location.href;
+		var pathName = window.document.location.pathname;
+		var webName = pathName == '' ? '' : pathName.substring(0, pathName.lastIndexOf('/'))
+		console.log(window.location.protocol + '//' + window.location.host+ '/' + webName);
+		var ogrname = window.location.protocol + '//' + window.location.host+ '/' + webName
+		console.log(nowurl.indexOf('.html'));
+		$.get(ogrname+'/views' + obj.url,function(res){
 			let render = template.compile(res),
 				html = render(obj.data);
 			Config.TplCache.push({
