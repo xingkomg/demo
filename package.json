@@ -1,0 +1,29 @@
+{
+  "name": "qinzhongfu-pc",
+  "version": "1.0.0",
+  "description": "轻重付-移动端",
+  "main": "views/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhupinglei",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-runtime": "^6.11.6",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "less":"2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "uglify-js": "^2.7.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  }
+}

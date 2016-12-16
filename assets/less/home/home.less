@@ -1,0 +1,57 @@
+#home{
+	#banner{
+		position: relative;
+		overflow: hidden;
+
+		.swiper-container{
+			width: 100%;
+			height: 100%;
+
+	        .swiper-slide{
+	        	overflow: hidden;
+
+	        	img{
+	        		display: block;
+	        		width: 100%;
+	        		height: 100%;
+	        	}
+	        }
+
+	        .swiper-pagination{
+		    	.swiper-pagination-bullet{
+		    		width: 8px;
+		    		height: 8px;
+		    		overflow: hidden;
+		    		border-radius: 8px;
+		    		margin: 0 3px;
+		    		background-color: #fff;
+		    		opacity: 1;
+		    	}
+
+		    	.swiper-pagination-bullet-active{
+		    		background-color: #c29c4a;
+		    	}
+		    }
+	    }
+	}
+
+	.tel{
+		margin: 10px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		border-radius: 3px;
+		overflow: hidden;
+		background: #e2c663; /* Old browsers */
+		background: -moz-linear-gradient(top, #e2c663 0%, #dec160 46%, #ac8039 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #e2c663 0%,#dec160 46%,#ac8039 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #e2c663 0%,#dec160 46%,#ac8039 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2c663', endColorstr='#ac8039',GradientType=0 ); /* IE6-9 */
+
+		a{
+			display: block;
+			color: #fff;
+			font-size: 20px;
+		}
+	}
+}
