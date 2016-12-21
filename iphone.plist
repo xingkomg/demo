@@ -1,0 +1,57 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+
+<dict>
+
+   <key>items</key>
+
+   <array>
+
+       <dict>
+
+           <key>assets</key>
+
+           <array>
+
+               <dict>
+
+                   <key>kind</key>
+
+                   <string>software-package</string>
+
+                   <key>url</key>
+
+                   <string>http://d.pcs.baidu.com/file/6cbd10c878b8c960300c8bf92727c5bd?fid=4095460717-250528-854295651582994&time=1482197980&rt=sh&sign=FDTAERVY-DCb740ccc5511e5e8fedcff06b081203-keWVszBqJ%2Fx9zKZjZnzwTFr%2BBSk%3D&expires=8h&chkv=1&chkbd=0&chkpc=et&dp-logid=8219595789843538710&dp-callid=0&r=542119613</string>
+
+               </dict>
+
+           </array><key>metadata</key>
+
+           <dict>
+
+               <key>bundle-identifier</key>
+
+               <string>com.qingzhon.-</string>
+
+               <key>bundle-version</key>
+
+               <string>1.1.1</string>
+
+               <key>kind</key>
+
+               <string>software</string>
+
+               <key>title</key>
+
+               <string>我的app</string>
+
+           </dict>
+
+       </dict>
+
+   </array>
+
+</dict>
+
+</plist>
