@@ -24,18 +24,17 @@
             window.sti_extend_id = '222'+new Date().getTime();
             window.sti_post_url = encodeURIComponent('http://172.20.13.33:8080/?extendId={extendId}&startTime={startTime}&endTime={endTime}&feeTime={feeTime}&endDirection={endDirection}&endReason={endReason}&caller={caller}&callee={callee}&recodingUrl={recodingUrl}');;
             
-            setTimeout(()=>{
               window.STI_JSSIP.jssip_login('828606010','88893072')
-            },0);
-            setTimeout(()=>{
-              window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
-              // window.STI_GUI.show_call_dialog('KMIMain',0,0,0,STI_GUI.msisdn_format('081291659042'))
-              
-            },10000);
+                window.userAgent.on('connected', function (data) {
+                console.log('连接SIP成功...');
+                  window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+            });
+
+         
       }
     </script>
     
-    <a href="javascript:test;">测试按钮</a>
+    <a href="javascript:test();">测试按钮</a>
     <!-- built files will be auto injected -->
   </body>
 </html>
