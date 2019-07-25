@@ -25,10 +25,10 @@
             window.sti_post_url = encodeURIComponent('http://172.20.13.33:8080/?extendId={extendId}&startTime={startTime}&endTime={endTime}&feeTime={feeTime}&endDirection={endDirection}&endReason={endReason}&caller={caller}&callee={callee}&recodingUrl={recodingUrl}');;
             
               window.STI_JSSIP.jssip_login('828606010','88893072')
-                window.userAgent.on('connected', function (data) {
-                console.log('连接SIP成功...');
-                  window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
-            });
+                window.userAgent.on('registered', function (data) {
+            console.log('登录注册SIP成功...');
+            window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+        });
 
          
       }
