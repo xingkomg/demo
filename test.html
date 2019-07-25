@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>管理后台</title>
+  </head>
+  <body>
+    <div id="KMIMain"></div>
+    <div id="app"></div>
+    <script src="https://cs.kmindo.com:8443/pages/jssip/iframe/js/jquery-3.3.1.min.js" defer="defer"></script> <script language="javascript" src="https://cs.kmindo.com:8443/pages/jssip/iframe/js/jssip-3.3.5.min.js" defer="defer"></script> 
+    <script language=javascript src='https://cs.kmindo.com:8443/pages/jssip/iframe/js/js-sti-jssip-1.0.0.js'></script>
+    <script language="javascript" src="https://cs.kmindo.com:8443/pages/jssip/iframe/js/js-sti-gui-1.0.0.js" defer="defer"></script> 
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyCAyOD6cKscitoIc9wM26srXYOR2v6Ka-I&language=zh-CN"></script> 
+    <script>
+       window.sti_account = 'happygold';
+            window.sti_password = '3053060535fe607e2aad33eff5e03951';
+            window.sti_channel_key = '1a614ac9a59b4b6eb383a1227726c997';
+            window.sti_voip_account = '828606010';
+            window.sti_voip_password = '88893072';
+            window.sti_msisdn = '081291659042';
+            window.sti_extend_id = '222'+new Date().getTime();
+            window.sti_post_url = encodeURIComponent('http://172.20.13.33:8080/?extendId={extendId}&startTime={startTime}&endTime={endTime}&feeTime={feeTime}&endDirection={endDirection}&endReason={endReason}&caller={caller}&callee={callee}&recodingUrl={recodingUrl}');;
+            
+            setTimeout(()=>{
+              window.STI_JSSIP.jssip_login('828606010','88893072')
+            },10000);
+            setTimeout(()=>{
+              window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+              // window.STI_GUI.show_call_dialog('KMIMain',0,0,0,STI_GUI.msisdn_format('081291659042'))
+              
+            },25000);
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
