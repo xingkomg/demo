@@ -27,7 +27,26 @@
               window.STI_JSSIP.jssip_login('828606010','88893072')
                 window.userAgent.on('registered', function (data) {
             console.log('登录注册SIP成功...');
+            //window.STI_GUI.show_call_dialog('KMIMain',0,0,0,STI_GUI.msisdn_format('081291659042'))
             window.STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+                // 已连接状态直接呼叫
+                if (window.userAgent.isConnected() && window.userAgent.isRegistered()) {
+                    STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+                }
+                // 定时获取SIP登录状态
+                else {
+                    // 定时更新登录状态
+                    var callTimer = setInterval(function () {
+                        if (window.userAgent.isConnected() && window.userAgent.isRegistered()) {
+                            clearInterval(callTimer);
+
+                            console.info("开始呼叫..." + window.userAgent.isConnected() + " " + window.userAgent.isRegistered());
+
+                            STI_JSSIP.call(STI_GUI.msisdn_format('081291659042'));
+                        }
+                    }, 300);
+                    window.sti_call_timer = callTimer;
+                }
         });
 
          
